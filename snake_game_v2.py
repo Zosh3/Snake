@@ -5,9 +5,9 @@ This adds the standard pygame loop, check for a QUIT event.
 It uses the while, for and if keywords
 """
 # Set up constants for colours
-# Each colour is a tuple of Red, Green,  Blue  values.  Each value can range from 0 to 255.
-GREEN = (0, 255, 0)
-BLACK = (0, 0, 0)
+# Each colour is a tuple of COLOUR_RED, COLOUR_GREEN,  Blue  values.  Each value can range from 0 to 255.
+COLOUR_GREEN = (0, 255, 0)
+COLOUR_BLACK = (0, 0, 0)
 
 # Initialize Pygame
 pygame.init()
@@ -30,10 +30,10 @@ while not game_over:
             game_over = True
 
     # Fill the background with black
-    screen.fill(BLACK)
+    screen.fill(COLOUR_BLACK)
 
     # Draw a green square (the snake) at the center of the screen
-    pygame.draw.rect(screen, GREEN, [320, 240, 20,20])
+    pygame.draw.rect(screen, COLOUR_GREEN, [320, 240, 20,20])
 
     pygame.display.update()
 

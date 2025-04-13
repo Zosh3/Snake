@@ -5,12 +5,12 @@ import pygame
 """
 This is the initial starting point to build the snake game.
 It has the minimal boiler-plate pygame code to get started.
-It will draw a green square on a black background and wait for 2 seconds before quitting.
+It will draw a COLOUR_GREEN square on a black background and wait for 2 seconds before quitting.
 """
 # Set up constants for colours
-# Each colour is a tuple of Red, Green,  Blue  values.  Each value can range from 0 to 255.
-GREEN = (0, 255, 0)
-BLACK = (0, 0, 0)
+# Each colour is a tuple of COLOUR_RED, COLOUR_GREEN,  Blue  values.  Each value can range from 0 to 255.
+COLOUR_GREEN = (0, 255, 0)
+COLOUR_BLACK = (0, 0, 0)
 
 # Initialize Pygame
 pygame.init()
@@ -24,12 +24,12 @@ screen = pygame.display.set_mode((640, 480))
 pygame.display.set_caption("Python Snake Game")
 
 # Fill the background with black
-screen.fill(BLACK)
+screen.fill(COLOUR_BLACK)
 
-# Draw a green square (the snake) at the center of the screen
+# Draw a COLOUR_GREEN square (the snake) at the center of the screen
 # The square is 20x20 pixels in size and is drawn at (320, 240) on the screen.
 # The coordinates are the top-left corner of the square.
-pygame.draw.rect(screen, GREEN, [320, 240, 20,20])
+pygame.draw.rect(screen, COLOUR_GREEN, [320, 240, 20,20])
 
 pygame.display.update()
 

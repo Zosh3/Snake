@@ -1,6 +1,6 @@
 import pygame
 
-class Snake:
+class Serpent:
     
     def __init__(self, name, block_size, start_x, start_y):
 
@@ -12,7 +12,7 @@ class Snake:
             self.body.append([start_x - i * 20, start_y])
 
     def __str__(self):
-        return f"Snake: {self.name}"
+        return f"Serpent: {self.name}"
 
     @property
     def length(self):
@@ -34,19 +34,19 @@ class Snake:
         self._body = value
 
     def draw(self, screen, colour):
-        """Draw the snake on the screen."""
+        """Draw the serpent on the screen."""
         for segment in self.body:
             pygame.draw.rect(screen, colour, [segment[0], segment[1], self._block_size, self._block_size])
 
     def update(self, head):
-        """Update the snake body."""
+        """Update the serpent body."""
         self.body.append(head) # Add new head to the body
         if len(self.body) > self.length:
-            # Remove the tail segment if the snake is longer than its length
+            # Remove the tail segment if the serpent is longer than its length
             self.body.pop(0)  # Remove the tail
 
         
     def eat(self):
         """eat food."""
         eat_sound = pygame.mixer.Sound("sounds/snake.mp3")  
-        eat_sound.play()  # Play the sound when the snake eats food
+        eat_sound.play()  # Play the sound when the serpent eats food

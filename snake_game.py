@@ -1,6 +1,6 @@
 import pygame
 import random  # Import the random module
-from snake import Snake
+from serpent import Serpent
 
 # Screen dimensions
 SCREEN_WIDTH = 640
@@ -10,11 +10,11 @@ SCREEN_CENTRE_X = SCREEN_WIDTH // 2
 SCREEN_CENTRE_Y = SCREEN_HEIGHT // 2
 
 # Colors (using RGB tuples)
-BLACK = (0, 0, 0)
+COLOUR_BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-GREEN = (0, 255, 0)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+COLOUR_GREEN = (0, 255, 0)
+COLOUR_RED = (255, 0, 0)
+COLOUR_BLUE = (0, 0, 255)
 
 ## Set out the geometry of the game
 
@@ -24,7 +24,7 @@ SNAKE_SPEED = 5  # Controls how fast the snake moves (frames per second)
 
 # def get_random_colour():
 #     """Generate a random colour."""
-#     return random.choice([GREEN, WHITE, RED, BLUE])
+#     return random.choice([COLOUR_GREEN, WHITE, COLOUR_RED, COLOUR_BLUE])
 
 # random_colour = get_random_colour()
 
@@ -50,7 +50,7 @@ snake_y = SCREEN_CENTRE_Y
 snake_length = 3
 
 # Initial snake body is horizontal three cells long
-slippy = Snake("Slippy", SNAKE_BLOCK_SIZE, SCREEN_CENTRE_X, SCREEN_CENTRE_Y)
+slippy = Serpent("Slippy", SNAKE_BLOCK_SIZE, SCREEN_CENTRE_X, SCREEN_CENTRE_Y)
 print(slippy)
 
 
@@ -68,7 +68,7 @@ pygame.mixer.init()  # Initialize the mixer module
 # Draw the food
 def draw_food():
     """Draw the food on the screen."""
-    pygame.draw.rect(screen, RED, [food_x, food_y, SNAKE_BLOCK_SIZE, SNAKE_BLOCK_SIZE])
+    pygame.draw.rect(screen, COLOUR_RED, [food_x, food_y, SNAKE_BLOCK_SIZE, SNAKE_BLOCK_SIZE])
 
 # Create the game window
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -129,13 +129,13 @@ while not game_over:
     # Check for collisions with the walls
 
   # Fill the background with black
-    screen.fill(BLACK)
+    screen.fill(COLOUR_BLACK)
 
     draw_food()
-    #pygame.draw.rect(screen, RED, [food_x, food_y, SNAKE_BLOCK_SIZE, SNAKE_BLOCK_SIZE])
+    #pygame.draw.rect(screen, COLOUR_RED, [food_x, food_y, SNAKE_BLOCK_SIZE, SNAKE_BLOCK_SIZE])
 
     # Draw the snake
-    slippy.draw(screen, GREEN)
+    slippy.draw(screen, COLOUR_GREEN)
 
     # Keep the window open (we'll add drawing here later)
     pygame.display.update()

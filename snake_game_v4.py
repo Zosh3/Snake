@@ -1,15 +1,11 @@
 import pygame
+from snake1 import Snake1
 
 """
-This introduces functionality to change what's on the screen with the user's keyboard input.
-It uses the pygame.KEYDOWN event to check for key presses and change the colour of the snake.
-B=Blue, G=COLOUR_GREEN, R=COLOUR_RED, Y=COLOUR_YELLOW, O=COLOUR_ORANGE, The default is COLOUR_GREEN.
-
-It also creates constants to make the  code more readable and easy to change when setting up the screen geometry and the snake's speed.
-
+This imports the basic snake class
 """
 # Set up constants for colours
-# Each colour is a tuple of COLOUR_RED, COLOUR_GREEN,  Blue  values.  Each value can range from 0 to 255.
+# Each colour is a tuple of red, green, blue  values.  Each value can range from 0 to 255.
 COLOUR_GREEN = (0, 255, 0)
 COLOUR_BLACK = (0, 0, 0)
 COLOUR_RED = (255, 0, 0)
@@ -19,10 +15,8 @@ COLOUR_ORANGE = (255, 165, 0)
 
 SCREEN_WIDTH = 640
 SCREEN_HEIGHT = 480
-SNAKE_SIZE = 20
 SCREEN_CENTRE_X = SCREEN_WIDTH // 2
 SCREEN_CENTRE_Y = SCREEN_HEIGHT // 2
-
 
 # Initialize Pygame
 pygame.init()
@@ -57,11 +51,14 @@ while not game_over:
                 colour = COLOUR_YELLOW
             elif event.key == pygame.K_o:
                 colour = COLOUR_ORANGE
+            else:
+                colour = COLOUR_GREEN
 
     screen.fill(COLOUR_BLACK)
 
-    # Draw a green square (the snake) at the center of the screen
-    pygame.draw.rect(screen, colour, [SCREEN_CENTRE_X, SCREEN_CENTRE_Y, SNAKE_SIZE, SNAKE_SIZE])
+    # Create an instance of the snake class and draw it
+    slippy = Snake1(colour, SCREEN_CENTRE_X, SCREEN_CENTRE_Y)
+    slippy.draw(screen)
 
     pygame.display.update()
 
