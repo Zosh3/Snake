@@ -31,6 +31,7 @@ game_over = False
 while not game_over:
     colour = GREEN  # Default colour
     for event in pygame.event.get():
+        print(event)  # Print the event to see what is happening
         if event.type == pygame.QUIT:
             game_over = True
 

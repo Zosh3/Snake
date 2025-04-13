@@ -25,6 +25,7 @@ clock = pygame.time.Clock()
 game_over = False
 while not game_over:
     for event in pygame.event.get():
+        print(f"event: type: {event.type} dictionary items: {event.dict.items()}")  # Print the event to see what is happening
         if event.type == pygame.QUIT:
             game_over = True
 
