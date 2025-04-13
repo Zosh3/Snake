@@ -1,5 +1,5 @@
 import pygame
-from snake1 import Snake1
+from snake import Snake
 
 """
 This introduces functionality to move the snake with the user's keyboard input (up / down / left / right keys).
@@ -45,7 +45,7 @@ clock = pygame.time.Clock()
 colour = COLOUR_GREEN  # Default colour
 
     # Create an instance of the snake class and draw it
-slippy = Snake1(colour, snake_x, snake_y)
+slippy = Snake(colour, snake_x, snake_y)
 
 game_over = False
 while not game_over:

@@ -1,5 +1,5 @@
 import pygame
-from snake1 import Snake1
+from snake import Snake
 
 """
 This imports the basic snake class
@@ -57,7 +57,7 @@ while not game_over:
     screen.fill(COLOUR_BLACK)
 
     # Create an instance of the snake class and draw it
-    slippy = Snake1(colour, SCREEN_CENTRE_X, SCREEN_CENTRE_Y)
+    slippy = Snake(colour, SCREEN_CENTRE_X, SCREEN_CENTRE_Y)
     slippy.draw(screen)
 
     pygame.display.update()

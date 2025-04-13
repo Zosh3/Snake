@@ -1,5 +1,5 @@
 import pygame
-from snake1 import Snake1
+from snake import Snake
 from game_constants import COLOUR_BLACK, COLOUR_GREEN
 from game_constants import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_CENTRE_X, SCREEN_CENTRE_Y
 from game_constants import FRAME_RATE
@@ -33,7 +33,7 @@ clock = pygame.time.Clock()
 colour = COLOUR_GREEN  # Default colour
 
 # Create an instance of the snake class and draw it
-slippy = Snake1(colour, snake_x, snake_y)
+slippy = Snake(colour, snake_x, snake_y)
 
 game_over = False
 while not game_over:
